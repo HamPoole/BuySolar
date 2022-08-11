@@ -2,8 +2,7 @@
 
 ## Functional Description & Goals:
 
-Buy Solar's an application to demonstrate & simplify the purchase of cheap renewable energy for businesses & consumers
-as the price fluctuates daily.
+Buy Solar's an application to simplify the purchase of cheap renewable energy for businesses & consumers as the price of electricity fluctuates daily.
 
 Growing renewable energy supplies, and increasing consumer efficiency, means negative energy price events, where more
 renewable energy is supplied than needed, are increasingly common.<sup>1</sup> <sup>2</sup>
@@ -18,6 +17,7 @@ Its goals are:
    price.<sup>3</sup>
 3. Drive growth with businesses and consumers who have not previously participated in consuming electricity based on the
    spot price.
+4. Support solar energy by consuming excess solar power during periods of low prices.
 
 ## Current Context:
 
@@ -62,7 +62,7 @@ These components will allows consumers to access an API endpoint for their elect
 Rust console application to access public API endpoints easily and reliably. Simply achieved via the asynchronous
 library [axum](https://github.com/tokio-rs/axum).
 
-Rust [Tauri](https://tauri.app/) desktop applications for Windows and MacOS.
+Rust [Tauri](https://tauri.app/) desktop applications for Windows and MacOS.  "It's Electron but good," framework for desktop web applications.  Flexible access to the Javascript ecosystem means it's a very good solution.
 
 Parsing the API response will be required.  Requires a regex generation app or similar to build API parsing rules.
 
@@ -74,30 +74,16 @@ Requires a way to trigger home power applications.  May need to trigger a filesy
 
 ## State of market: Existing solutions and risks
 
-Demand side management, demand response
+Unfortunately, several obscure (but better) applications exist that are superior to this.
 
-https://github.com/topics/energy-management?o=desc&s=stars
-
-http://wattdepot.org/
-
-https://github.com/bemoss/BEMOSS3.5
-
-https://github.com/emoncms/emoncms
-
-Home energy management system.
-
-Paid Companies
-
-https://www.ohmconnect.com/
-
-https://www.enode.io/blog/demand-response-software
-
-Glossary: An ordered list of defined terms and concepts used throughout the document.
+- Schneider Electric.  
 
 #### References
 
 [1] https://aemo.com.au/newsroom/news-updates/negative-electricity-demand-in-south-australia
+
 [2] https://www.energycouncil.com.au/analysis/increases-in-negative-prices-is-it-a-positive/
+
 [3] Barbose, Galen, Charles Goldman, and Bernie Neenan. A survey of utility experience with real time pricing. No.
 LBNL-54238. Lawrence Berkeley National Lab.(LBNL), Berkeley, CA (United States), 2004.
 
@@ -121,3 +107,23 @@ https://en.wikipedia.org/wiki/Open_Automated_Demand_Response
 https://www.energyos.com.au/
 Real-time electricity pricing for industrial customers: Survey and case
 studies in the United States
+
+
+Demand side management, demand response
+
+https://github.com/topics/energy-management?o=desc&s=stars
+
+http://wattdepot.org/
+
+https://github.com/bemoss/BEMOSS3.5
+
+https://github.com/emoncms/emoncms
+
+Home energy management system.
+
+Paid Companies
+
+https://www.ohmconnect.com/
+
+https://www.enode.io/blog/demand-response-software
+
