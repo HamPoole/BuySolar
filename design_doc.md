@@ -22,7 +22,7 @@ Its goals are:
 ## Current Context:
 
 - Vast majority of consumers do not consume energy via Real Time Prices marked to the daily supply. Instead, Time Of Use
-  power, where price varies over pre-contracted daily intervals, or a flat contracted rate, predominate.
+  power, with pre-priced daily intervals, or a flat contracted rate, predominate.
 - Furthermore, the technology and capability for real time power consumption has been available and studied for decades.
   Many analog solutions exist, economists and retailers have explored real time plans for decades.
 - However, with the growth of solar energy, the benefit for "demand management," increasing and decreasing workloads
@@ -35,6 +35,8 @@ The software design is based on two primary components.
 1. Standalone console application. Hostable server-side and on Windows/MacOS personal computers.
 2. A multi-operating sytstem desktop application that extends the above, and allows use and configuration by
    non-technical users.
+
+These components will allows consumers to access an API endpoint for their electricity prices, and enable/disable their energy device automation solution.
 
 ## Design Considerations: Describe the issues that need to be addressed before creating a design solution:
 
@@ -54,12 +56,6 @@ The software design is based on two primary components.
 - Personal computer specific architectures. Is creating a desktop application feasible?
 - Commercial, paid for alternatives are readily available.
 
-## Goals and Guidelines: Describe any goals and guidelines for the design of the software.
-
-Goal is to allow to nontechnical users who have previously not used real time priced power to integrate with real time
-power.
-
-Must work on Windows and MacOS, whilst being hostable on Unix servers.
 
 ## Architecture and Development.
 
@@ -68,11 +64,13 @@ library [axum](https://github.com/tokio-rs/axum).
 
 Rust [Tauri](https://tauri.app/) desktop applications for Windows and MacOS.
 
-Parsing the API response. ? Regex generator.
+Parsing the API response will be required.  Requires a regex generation app or similar to build API parsing rules.
 
-Draw 4 pictures. API Window, Main Window + Threshold, Trigger Window, CLI App Architecture.
+Requires a way to trigger home power applications.  May need to trigger a filesystem file or HTTP POST
 
-Application is independent of the graphical interface.
+### Diagrams of GUI:
+
+![Diagram_image](https://imgur.com/HSz9kKh.jpg)
 
 ## State of market: Existing solutions and risks
 
